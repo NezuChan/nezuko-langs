@@ -7,7 +7,8 @@ export default {
     MUSIC_PAUSED: 'Paused music',
     MUSIC_RESUMED: 'Resumed music',
     MUSIC_END: 'We\'\ve run out of songs! Better queue up some more tunes.',
+    MUSIC_END_2: 'Ran Out Of Song',
     MUSIC_NO_RESULTS: 'No Result found with given argument',
     MUSIC_PROMPT: 'What music you want to play?',
-    MUSIC_PROMT_2: 'you have {TIME} to decide.'
+    MUSIC_PROMPT_2: 'you have {TIME} to decide.'
 }
