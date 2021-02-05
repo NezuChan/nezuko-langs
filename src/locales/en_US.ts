@@ -8,6 +8,8 @@ export default {
     MUSIC_RESUMED: 'Resumed music',
     MUSIC_END: 'We\'\ve run out of songs! Better queue up some more tunes.',
     MUSIC_END_2: 'Ran Out Of Song',
+    MUSIC_IN_VOICE: 'You must be in voice channel to use this',
+    MUSIC_HAVE_PERM: 'I dont have permission in your voice channel',
     MUSIC_NO_RESULTS: 'No Result found with given argument',
     MUSIC_PROMPT: 'What music you want to play?',
     MUSIC_PROMPT_2: 'you have {TIME} to decide.'
