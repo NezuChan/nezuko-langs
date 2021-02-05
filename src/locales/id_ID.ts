@@ -6,6 +6,8 @@ export default {
     MUSIC_STOPPED: 'Menghentikan musik',
     MUSIC_PAUSED: 'Memberhentikan musik',
     MUSIC_RESUMED: 'Melanjutkan musik',
+    MUSIC_END: 'Kita sudah kehabisan lagu! Lebih baik antri beberapa lagu lagi.',
+    MUSIC_NO_RESULTS: 'Tidak dapat menemukan hasil dari *argument* yang di berikan.',
     MUSIC_PROMPT: 'Music Apa yang mau kamu mainkan?',
     MUSIC_PROMT_2: 'Kamu mempunyai {TIME} untuk menentukan.'
 }
