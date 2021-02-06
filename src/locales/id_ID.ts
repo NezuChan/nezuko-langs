@@ -1,4 +1,8 @@
+import en_US from './en_US'
 export default {
+    /**DEFAULT VALUES */
+    ...en_US,
+    
     /**MUSIC MODULES */
     ADDED_TO_QUEUE: 'Menambahkan {MUSIC} ke dalam antrian music',
     STARTED_PLAYING_MUSIC: 'Mulai Memainkan',
@@ -17,7 +21,7 @@ export default {
     MUSIC_SAME_VOICE: 'Kamu harus berada di *voice channel* yang sama dengan ku',
     MUSIC_EXCEED_LIMIT: 'Maaf, antrian music di *server* ini telah mencapai batas yaitu {LIMIT} musik in dalam antrian.',
     MUSIC_IS_PLAYING: 'Tidak dapat melanjutkan musik yang telah bermain',
-    
+
     /**UTIL MODULES */
     UTIL_COMMAND_HELP: 'Perintah',
     UTIL_COMMAND_HELP_2: 'Daftar perintah yang tersedia.\nUntuk info perintah lebih lanjut silahkan ketik {PREFIX}',
