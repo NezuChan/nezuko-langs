@@ -13,6 +13,19 @@ export default {
     MUSIC_NO_RESULTS: 'No Result found with given argument',
     MUSIC_PROMPT: 'What music you want to play?',
     MUSIC_PROMPT_2: 'you have {TIME} to decide.',
+    MUSIC_VOLUME_PROMPT: 'What new volume you want to set?',
+    MUSIC_VOLUME: 'Music volume now',
+    QUEUE_NOW_PLAYING: 'Now playing',
+    CURRENT_QUEUE: 'Current queue',
+    ENTRIES: 'Entries',
+    MUSIC_REMOVED: 'Removed {MUSIC} from queue',
+    ENABLE_FILTERS: 'Turned {STATUS} {FILTERS} filters.',
+    MUSIC_SKIPPED_TO: 'Skipped to',
+    MUSIC_SEEK: 'Seek music',
+    INVALID_VOLUME: 'Invalid Volume, valid volume only between 1-100',
+    MUSIC_LOOP_INVALID: 'Invalid options, valid options only `queue`, `song` ',
+    MUSIC_LOOP_QUEUE: 'Turned loopQueue',
+    MUSIC_LOOP_SONG: 'Turned loopSong',
     MUSIC_NO_QUEUE: 'There are no music playing.',
     MUSIC_SAME_VOICE: 'You must be same voice channel as me',
     MUSIC_EXCEED_LIMIT: 'Sorry the queue has exceeded the limit {LIMIT} music in queue',
@@ -23,5 +36,9 @@ export default {
     UTIL_COMMAND_HELP_2: 'A list of available commands.\nFor additional info on a command, type {PREFIX}',
     UTIL_COMMAND_HELP_DESCRIPTION: 'Description',
     UTIL_COMMAND_HELP_ALIASES: 'Aliases',
-    UTIL_COMMAND_HELP_EXAMPLES: 'Examples'
+    UTIL_COMMAND_HELP_EXAMPLES: 'Examples',
+
+    /**MISC */
+    ERROR_OCCURED: 'Oh No! An Error Occured!',
+    ERROR_OCCURED_2: 'Report This Issue To'
 }
