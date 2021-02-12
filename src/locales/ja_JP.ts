@@ -19,7 +19,7 @@ export default {
     MUSIC_PROMPT_2: 'あなたは決める {TIME} があります。',
     MUSIC_VOLUME_PROMPT: '新しいボリュームを設定する',
     MUSIC_VOLUME: '今すぐ音楽の音量',
-    QUEUE_NOW_PLAYING: '今すぐプレイ',
+    QUEUE_NOW_PLAYING: 'ナウ・プレーイング',
     CURRENT_QUEUE: '現在のキュー',
     ENTRIES: 'エントリ',
     MUSIC_REMOVED: 'キューから {MUSIC} を削除',
