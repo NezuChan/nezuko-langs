@@ -1,4 +1,21 @@
-import en_US from './en_US'
+import en_US from './en_US';
+
+export enum reaction {
+    /**REACTIONS MODULE */
+    びっくり, 一口, 赤面, ブープ, 応援,
+    拍手, 混乱している, 泣く, 寄り添う, ダンス,
+    フィード, ハッピー, ホールド, 抱擁, 接吻,
+    笑い, スケベ, なめる, nom, パット,
+    ポーク, ふくれっ面, パンチ, 実行, 怖い,
+    びっくりした, 叫ぶ, 平手打ち, スマイル, 独善的,
+    見詰める, びっくりし, いいぞ, くすぐる, 波
+}
+
+export enum help {
+    /**HELP MODULE */
+    フィルター, ファン, 大須, 音楽, 反応, ユーティリティ, プレイリスト
+}
+
 export default {
     /**DEFAULT VALUE */
     ...en_US,
@@ -37,12 +54,31 @@ export default {
     
     /**UTIL MODULES */
     UTIL_COMMAND_HELP: 'コマンド',
-    UTIL_COMMAND_HELP_2: '使用可能なコマンドのリスト。コマンドの追加情報については、{prefix} と入力してください。',
+    UTIL_COMMAND_HELP_2: '使用可能なコマンドのリスト。コマンドの追加情報については、{PREFIX} と入力してください。',
     UTIL_COMMAND_HELP_DESCRIPTION: '説明',
     UTIL_COMMAND_HELP_ALIASES: 'エイリアス',
     UTIL_COMMAND_HELP_EXAMPLES: '例',
+    UTIL_COMMAND_HELP_FOOTER: 'ℹ️ <>または [] を含めないでください。 <> は必須を意味し、[] はオプションを意味します。',
+    
+    /**OSU MODULES */
+    OSU_NO_USERNAME_INPUT: '<:nezuko_mad_2:808653903725723688> | ユーザー名を入力してください！',
+    OSU_RECENT_NOT_FOUND: '<:nezuko_cry:808656072343814154> | プレイヤーデータが見つかりません！',
+    OSU_USER_ON_MODE: (user: string, mode: string) => `${user} オン ${mode}`,
+    OSU_ACCURACY: '正確さ',
+    OSU_RANKS: 'ランク',
+    OSU_JOIN_DATE: '参加日',
+    OSU_LEVEL: 'レベル',
+    OSU_PERFORMANCE: 'パフォーマンス',
+    OSU_PLAYTIME: 'プレイタイム',
+    OSU_USERNAME: 'ユーザー名',
+    OSU_PLAYCOUNT: '再生回数',
+    OSU_COUNT_RANKS: 'ランクを数える',
+    OSU_SCORE: 'スコア',
+    OSU_MODS: 'モッド',
     
     /**MISC */
     ERROR_OCCURED: 'ああ違います！エラーが発生しました!',
-    ERROR_OCCURED_2: 'この問題を報告する'
-}
+    ERROR_OCCURED_2: 'この問題を報告する',
+    REACTIONS: (tag: number) => `ランダム ${reaction[tag]} 画像`,
+    HELP: (Help: number) => help[Help]
+} as typeof en_US;
