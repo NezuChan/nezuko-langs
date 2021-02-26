@@ -1,4 +1,20 @@
+import { User, Client } from "discord.js-light";
+export enum reaction {
+    amazed, bite, blush, boop, cheer,
+    clap, confused, cry, cuddle, dance,
+    feed, happy, hold, hug, kiss,
+    laugh, lewd, lick, nom, pat,
+    poke, pout, punch, run, scared,
+    shocked, shout, slap, smile, smug,
+    stare, surprised, thumbsup, tickle, wave
+}
+
+export enum help {
+    Filters, Fun, Osu, Music, Reactions, Util, Playlist
+}
+
 export default {
+    
     /**MUSIC MODULES */
     ADDED_TO_QUEUE: 'Added {MUSIC} to queue',
     STARTED_PLAYING_MUSIC: 'Start Playing',
@@ -19,9 +35,12 @@ export default {
     CURRENT_QUEUE: 'Current queue',
     ENTRIES: 'Entries',
     MUSIC_REMOVED: 'Removed {MUSIC} from queue',
-    ENABLE_FILTERS: 'Turned {STATUS} {FILTERS} filters.',
+    ENABLE_FILTERS: 'turned {STATUS} {FILTERS} filters.',
     MUSIC_SKIPPED_TO: 'Skipped to',
+    SKIPTO_PROMPT: 'What queue number you want skipped to?',
     MUSIC_SEEK: 'Seek music',
+    REMOVE_MUSIC_PROMPT: 'What music you want to remove? type queue number',
+    SEEK_PROMPT: 'What duration you want to seek?',
     INVALID_VOLUME: 'Invalid Volume, valid volume only between 1-100',
     MUSIC_LOOP_INVALID: 'Invalid options, valid options only `queue`, `song` ',
     MUSIC_LOOP_QUEUE: 'Turned loopQueue',
@@ -30,15 +49,70 @@ export default {
     MUSIC_SAME_VOICE: 'You must be same voice channel as me',
     MUSIC_EXCEED_LIMIT: 'Sorry the queue has exceeded the limit {LIMIT} music in queue',
     MUSIC_IS_PLAYING: 'Cant resume that music already playing',
-
+    NO_SONGS_QUEUE: 'No songs in queue',
+    LYRICS_ASK: 'What lyrics you looking for?',
+    MUSIC_ISVOTED: (client: Client) => `sorry this command restricted, to use this command you need to vote me on top.gg.\n[Click Here](https://top.gg/bot/${client.user?.id}/vote)`,
+    MUSIC_PLAYER_PROMPT: 'Which channel you want to setup?',
+    
+    /**PLAYLIST MODULES */
+    PLAYLIST_PROMPT: 'What playlist you want to load?',
+    PLAYLIST_NO_NAME: 'Type playlist name!',
+    PLAYLIST_NO_FOUND: 'doesnt Exist, perhabs a typo or haven\'t created playlist?',
+    PLAYLIST_NO_MUSIC: 'Input music name/url',
+    ADDED_TO_PLAYLIST: 'Added {PLAYLISTNAME} plsylist to',
+    PLAYLIST: 'playlist',
+    PLAYLIST_ALREADY_CREATED: 'Sorry but {PLAYLISTNAME} already exist',
+    PLAYLIST_CREATED_PLAYLIST: 'Created {PLAYLISTNAME}',
+    NO_PLAYLIST: 'You doesnt have any playlist',
+    DELETE_PLAYLIST: 'Deleted {PLAYLISTNAME} playlist.',
+    PLAYLIST_DELETE_MUSIC: 'Removed {MUSICNAME} from {PLAYLISTNAME} playlist.',
+    
     /**UTIL MODULES */
     UTIL_COMMAND_HELP: 'Commands',
     UTIL_COMMAND_HELP_2: 'A list of available commands.\nFor additional info on a command, type {PREFIX}',
     UTIL_COMMAND_HELP_DESCRIPTION: 'Description',
     UTIL_COMMAND_HELP_ALIASES: 'Aliases',
     UTIL_COMMAND_HELP_EXAMPLES: 'Examples',
+    UTIL_COMMAND_HELP_FOOTER: 'ℹ️ Don\'t include <> or []. <> means required, and [] means optional.',
+    UTIL_NPM_PROMPT: 'What npm package you looking for?',
+    UTIL_TOTAL_CASES: 'Total Cases',
+    UTIL_TODAY_CASES: 'Today Cases',
+    UTIL_DEATHS: 'Deaths',
+    UTIL_TODAY_DEATHS: 'Today Deaths',
+    UTIL_RECOVERED: 'Recovered',
+    UTIL_TODAY_RECOVERED: 'Today Recovered',
+    UTIL_MANGA_PROMPT: 'What Manga you looking for?',
+    TRANSLATE_PROMPT: 'What language you want translate to?',
+    TRANSLATE_PROMPT_2: 'What you want to translate?',
+    PREFIX_PROMPT: 'What prefix you want change to?',
+    PREFIX_CHANGE: (prefix: string) => `Changed prefix to ${prefix}`,
+    LANGUAGE_PROMPT: "What languange you want change to?",
+    LANGUAGE_CHANGE: (locales: string) => `<:nezuko_woah:808656467426017280> | changed language to \`${locales}\``,
 
+    /**OSU MODULES */
+    OSU_NO_USERNAME_INPUT: '<:nezuko_mad_2:808653903725723688> | Input username!',
+    OSU_RECENT_NOT_FOUND: '<:nezuko_cry:808656072343814154> | Player data not found!',
+    OSU_USER_ON_MODE: (user: string, mode: string) => `${user} on ${mode}`,
+    OSU_ACCURACY: 'Accuracy',
+    OSU_RANKS: 'Ranks',
+    OSU_JOIN_DATE: 'Join Date',
+    OSU_LEVEL: 'Level',
+    OSU_PERFORMANCE: 'Performance',
+    OSU_PLAYTIME: 'Playtime',
+    OSU_USERNAME: 'Username',
+    OSU_PLAYCOUNT: 'Playcount',
+    OSU_COUNT_RANKS: 'Count ranks',
+    OSU_SCORE: 'Score',
+    OSU_MODS: 'Mods',
+    
     /**MISC */
     ERROR_OCCURED: 'Oh No! An Error Occured!',
-    ERROR_OCCURED_2: 'Report This Issue To'
+    ERROR_OCCURED_2: 'Report This Issue To',
+    LOADING: '<a:loading:785721296062251018> | Loading...',
+    REACTIONS: (tag: number) => `Random ${reaction[tag]} image`,
+    HELP: (Help: number) => help[Help],
+    isAFK: (REASON: string) => `Sorry this user currently afk\nReason: ${REASON}`,
+    RATE_LIMITED: (user: User, amount: number) => `**⏱️ | ${user}, Calm down!.** You can use command again in \`${Math.round(amount)}\` second(s)`,
+    CANCEL_COMMAND: '*Cancelled Command.*',
+    WEBSHOT_PROMPT: 'Which site do you want to capture ?'
 }
