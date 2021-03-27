@@ -1,4 +1,19 @@
 import en_US from './en_US'
+/**REACTIONS */
+export enum reaction {
+    takjub, gigit, "muka memerah", boop, bersorak,
+    "tepuk tangan", bingung, menangis, pelukan, menari,
+    "memberi makan", senang, hold, hug, cium,
+    tertawa, genit, jilat, nom, pat,
+    poke, pout, pukul, lari, takut,
+    syok, shout, tampar, senyum, smug,
+    tatap, terkejut, jempol, kelitik, melambai
+}
+
+export enum help {
+    Filter, Kesenangan, Moderasi, Osu, Musik, Reaksi, Utilitas, 'Daftar Putar'
+}
+
 export default {
     /**DEFAULT VALUES */
     ...en_US,
@@ -27,5 +42,8 @@ export default {
     UTIL_COMMAND_HELP_2: 'Daftar perintah yang tersedia.\nUntuk info perintah lebih lanjut silahkan ketik {PREFIX}',
     UTIL_COMMAND_HELP_DESCRIPTION: 'Deskripsi',
     UTIL_COMMAND_HELP_ALIASES: 'Alias',
-    UTIL_COMMAND_HELP_EXAMPLES: 'Contoh'
+    UTIL_COMMAND_HELP_EXAMPLES: 'Contoh',
+    
+    /**MISC */
+    HELP: (Help: number) => help[Help]
 }
