@@ -13,7 +13,7 @@ export enum reaction {
 
 export enum help {
     /**HELP MODULE */
-    フィルター, ファン, 大須, 音楽, 反応, ユーティリティ, プレイリスト
+    フィルター, ファン, 節度, 大須, 音楽, 反応, ユーティリティ, プレイリスト
 }
 
 export default {
