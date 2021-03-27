@@ -1,4 +1,4 @@
-import { User, Client } from "discord.js-light";
+import { User, Client, TextChannel, VoiceChannel } from "discord.js";
 export enum reaction {
     amazed, bite, blush, boop, cheer,
     clap, confused, cry, cuddle, dance,
@@ -10,7 +10,7 @@ export enum reaction {
 }
 
 export enum help {
-    Filters, Fun, Osu, Music, Reactions, Util, Playlist
+    Filters, Fun, Moderation, Osu, Music, Reactions, Util, Playlist
 }
 
 export default {
@@ -53,7 +53,18 @@ export default {
     LYRICS_ASK: 'What lyrics you looking for?',
     MUSIC_ISVOTED: (client: Client) => `sorry this command restricted, to use this command you need to vote me on top.gg.\n[Click Here](https://top.gg/bot/${client.user?.id}/vote)`,
     MUSIC_PLAYER_PROMPT: 'Which channel you want to setup?',
-    
+    IS_HAVE_RECENT: 'No recent music found.',
+    CLEAR_FILTERS: 'Cleared player filters.',
+    MUSIC_DISCONNECTED: 'Someone disconnected me from voiceChannel, Deleted guild queue.',
+    VOICE_STATE_TIMEOUT: 'due to inactivity queue will be paused for 15 seconds to save resource.',
+    VOICE_STATE_TIMEOUT_END_TITLE: 'Disconnected due to inactivity',
+    VOICE_STATE_TIMEOUT_END: 'if you like please give a [vote](https://top.gg/bot/616169470293049344/vote)',
+    VOICE_STATE_RESUME: 'Someone joined voiceChannel! i\'ve resumed current queue',
+    MUSIC_SAME_CHANNEL: (channel: TextChannel) => `Sorry you must use this command on \`${channel.name}\` `,
+    MUSIC_BOUND_CHANNEL: (VC: VoiceChannel, channel: TextChannel) => `bound voice to \`${VC.name}\` and TextChannel to \`${channel.name}\``,
+    MUSIC_LACK_PERM_CONNECT_OR_SPEAK: "❌ **| I Don't have permissions `CONNECT` or `SPEAK`**",
+    MUSIC_VC_NOT_JOINABLE: "❌ **| Voice channel isn't joinable**",
+
     /**PLAYLIST MODULES */
     PLAYLIST_PROMPT: 'What playlist you want to load?',
     PLAYLIST_NO_NAME: 'Type playlist name!',
@@ -66,6 +77,10 @@ export default {
     NO_PLAYLIST: 'You doesnt have any playlist',
     DELETE_PLAYLIST: 'Deleted {PLAYLISTNAME} playlist.',
     PLAYLIST_DELETE_MUSIC: 'Removed {MUSICNAME} from {PLAYLISTNAME} playlist.',
+    PLAYLIST_IMPORT_PROMPT: 'From who you want to import?',
+    PLAYLIST_IMPORT_PROMPT_2: 'What playlist you want to import?',
+    PLAYLIST_IMPORTED_PLAYLIST: 'Imported {PLAYLISTNAME}',
+    PLAYLIST_RENEW_IMPORT: 'Renewed {PLAYLISTNAME}',
     
     /**UTIL MODULES */
     UTIL_COMMAND_HELP: 'Commands',
@@ -105,6 +120,28 @@ export default {
     OSU_SCORE: 'Score',
     OSU_MODS: 'Mods',
     
+    /**MODERATION */
+    WHO_TO_KICK: 'who would you like to kick?',
+    INVALID_MEMBER: 'please valid mention / type valid userid.',
+    WHO_TO_BAN: 'who would you like to ban?',
+    WHO_TO_HIDE: 'who would you like to hide?',
+    REASON: (reason: string) => `Reason: [\`${reason}\`]`,
+    LOCKEDDOWN_SERVER: (user: string) => `${user} lockeddown server`,
+    LOCKEDDOWN: (user: string) => `${user} lockeddown channel`,
+    UNLOCKEDDOWN: (user: string) => `${user} unlockeddown channel`,
+    UNLOCKEDDOWN_SERVER: (user: string) => `${user} unlockeddown server`,
+    KICKED: (user: string) => `${user} has been kicked`,
+    BANNED: (user: string) => `${user} has been banned`,
+    UNBANNED: (user: string) => `${user} has been unbanned`,
+    CLEARED: (message: number) => `Cleared: [\`${message} messages\`]`,
+    COOLDOWNS_CHANNEL: (user: string) => `${user} set channel cooldowns`,
+    COOLDOWNS_SERVER: (user: string) => `${user} set server cooldowns`,
+    COOLDOWNS: (cooldown: string) => `Cooldowns: [\`${cooldown}\`]`,
+    HIDDEN: (user: string) => `${user} has been hidden`,
+    UNHIDDEN: (user: string) => `${user} has been unhidden`,
+    MUTED: (user: string) => `${user} has been muted`,
+    UNMUTED: (user: string) => `${user} has been unmuted`,
+
     /**MISC */
     ERROR_OCCURED: 'Oh No! An Error Occured!',
     ERROR_OCCURED_2: 'Report This Issue To',
@@ -114,5 +151,6 @@ export default {
     isAFK: (REASON: string) => `Sorry this user currently afk\nReason: ${REASON}`,
     RATE_LIMITED: (user: User, amount: number) => `**⏱️ | ${user}, Calm down!.** You can use command again in \`${Math.round(amount)}\` second(s)`,
     CANCEL_COMMAND: '*Cancelled Command.*',
-    WEBSHOT_PROMPT: 'Which site do you want to capture ?'
+    WEBSHOT_PROMPT: 'Which site do you want to capture ?',
+    WHAT_TEXT: 'What text you want to say?'
 }
